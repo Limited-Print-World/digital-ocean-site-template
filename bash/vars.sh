@@ -10,7 +10,7 @@ bashDepends=$(cat $bashLibs/depends.txt)
 pythonDir=$workingDir/.venv
 pythonReq=$workingDir/requirements.txt
 pythonSrc=$pythonDir/bin/activate
-pythonMain=$workingDir/main.py
+pythonMain=$workingDir/server.py
 
 pythonDepends=$(grep -v '^\s*#' $pythonReq | sed 's/\s*#.*//' | grep -v '^\s*$')
 parent $()
