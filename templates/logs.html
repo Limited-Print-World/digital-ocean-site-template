@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Git Logs - {{ repo }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Latest Commits - {{ repo }}</h1>
+        <ul>
+        {% for c in commits %}
+            <li>
+                <p><strong>{{ c.author }}</strong> on <em>{{ c.date }}</em></p>
+                <p>{{ c.message }}</p>
+                <p><a href="{{ c.url }}" target="_blank">View on GitHub</a></p>
+            </li>
+        {% endfor %}
+        </ul>
+        <p><a href="/">← Back to home</a></p>
+    </div>
+</body>
+</html>

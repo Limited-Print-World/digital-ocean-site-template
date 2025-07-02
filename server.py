@@ -8,6 +8,15 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from http import HTTPStatus
 
 
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.requests import Request
+from routes import html, api
+
+from routes import html, api, dev  # ⬅ add dev
+
 
 root = Path(os.path.dirname( __file__ ))
 
@@ -90,8 +99,20 @@ os.makedirs("static", exist_ok=True)
 with open("static/example.txt", "w") as f:
     f.write("This is an example file.")
 
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8080))
-    server = HTTPServer(("0.0.0.0", port), MyHandler)
-    print(f"Server started on http://0.0.0.0:{port}")
-    server.serve_forever()
+
+app = FastAPI()
+
+
+# Mount routers
+app.include_router(html.router)
+app.include_router(api.router)
+app.include_router(dev.router)
+
+# Serve static files (CSS, JS)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Serve raw static HTML files from public/
+app.mount("/public", StaticFiles(directory="templates"), name="public")
+
+# Attach Jinja template directory
+templates = Jinja2Templates(directory="templates")

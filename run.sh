@@ -21,7 +21,8 @@ source $pythonSrc
 
 pip install -r $pythonReq
 
-python3 $pythonMain
+# python3 $pythonMain
+uvicorn server:app --host 0.0.0.0 --port 8080 --reload
 
 message "EXE IN:: $workingDir"
 message "SYS DEPENDS:: $bashDepends"
