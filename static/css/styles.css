@@ -13,7 +13,7 @@ a::after{
 }
 h1 {
     color: #514308;
-    --highlight: var(--text-light)
+    --highlight: var(--text-light);
 }
 img {
     width: 256px;
@@ -50,13 +50,51 @@ header p {
     padding: 2rem;
     gap: 1.5rem;
 }
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-button {
+  background: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 5px;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  position: sticky;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background: var(--card-border);
+  color: var(--bg-dark);
+  padding: 8px;
+  border-radius: 4px;
+  width: max-content;
+  max-width: 200px;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip-button:focus + .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip-button:target + .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
 .item-card {
     /* a space to place content */
     background-color: var(--bg-panel);
     border: 1px solid var(--card-border);
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 0 10px #00000066;
+    box-shadow: 0 0 10px #41404066;
     transition: transform 0.3s;
 }
 .item-card:hover {
@@ -69,6 +107,12 @@ header p {
     margin: 0;
     font-size: 1.5rem;
     color: var(--highlight);
+}
+.item-card:focus h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--highlight);
+    title: "hello there";
 }
 .item-card .status {
     font-style: italic;
