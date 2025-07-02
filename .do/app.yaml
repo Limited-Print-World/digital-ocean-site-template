@@ -4,5 +4,5 @@ services:
   github:
     branch: main
     deploy_on_push: true
-    repo: digitalocean/sample-python
+    repo: limited-print-world/digital-ocean-site-template
   name: sample-python

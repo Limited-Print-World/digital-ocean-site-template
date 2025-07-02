@@ -18,6 +18,10 @@ def get_favicon(request: FileResponse):
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
     return resources.TemplateResponse("static/img/favicon.ico")
+@router.get("/img/raven_head_left.png", response_class=FileResponse)
+def get_favicon(request: FileResponse):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse("static/img/raven_head_left.png")
 @router.post("/submit-email", response_class=HTMLResponse)
 async def submit_email(request: Request, email: str = Form(...)):
     return templates.TemplateResponse("index.html", {
