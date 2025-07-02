@@ -1,6 +1,10 @@
 from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.templating import Jinja2Templates
+from pathlib import Path
+import os,sys,time,json
+
+root = Path(os.path.dirname( __file__ ))
 
 templates = Jinja2Templates(directory="templates")
 resources = Jinja2Templates(directory="static")
@@ -16,15 +20,15 @@ async def index(request: Request):
 @router.get("/favicon.ico", response_class=FileResponse)
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("/img/favicon.ico")
+    return resources.TemplateResponse(root/"/favicon.ico")
 @router.get("/img/favicon.ico", response_class=FileResponse)
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("static/img/favicon.ico")
+    return resources.TemplateResponse(root/"static/img/favicon.ico")
 @router.get("/img/raven_head_left.png", response_class=FileResponse)
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("static/img/raven_head_left.png")
+    return resources.TemplateResponse(root/"static/img/raven_head_left.png")
 @router.get("/css/styles.css", response_class=FileResponse)
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
