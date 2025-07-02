@@ -16,7 +16,7 @@ async def index(request: Request):
 @router.get("/favicon.ico", response_class=FileResponse)
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("static/favicon.ico")
+    return resources.TemplateResponse("/img/favicon.ico")
 @router.get("/img/favicon.ico", response_class=FileResponse)
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''

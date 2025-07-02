@@ -107,7 +107,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Serve raw static HTML files from public/
-app.mount("/public", StaticFiles(directory="templates"), name="public")
+app.mount("/templates", StaticFiles(directory="templates"), name="templates")
 
 # Mount routers
 app.include_router(html.router)
