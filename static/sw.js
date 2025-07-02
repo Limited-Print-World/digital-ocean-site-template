@@ -1,4 +1,4 @@
-const CACHE_NAME = "pwa-cache-v2"; // ← bump this manually or with a build script
+const CACHE_NAME = "pwa-cache-v0.0.3"; // ← bump this manually or with a build script
 
 const FILES_TO_CACHE = [
   "/",

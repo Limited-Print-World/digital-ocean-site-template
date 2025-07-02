@@ -13,7 +13,7 @@ styles = Jinja2Templates(directory="static/css")
 
 router = APIRouter()
 
-verison = "0.0.2"
+verison = "0.0.3"
 
 @router.get("/", response_class=HTMLResponse)
 async def index(request: Request):
