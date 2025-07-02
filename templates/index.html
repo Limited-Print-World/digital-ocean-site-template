@@ -4,72 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limited Print World</title>
-<link rel="stylesheet" href="css/styles.css">    
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/vars.css') }}">
 </head>
 <body>
-    <header >
+    <header>
         <h1>Limited Print World</h1>
-        <h1 style="color: maroon; font-size: larger;" class="">( -- Under Construction -- )</h1>
-        <img src="/favicon.ico" alt="" srcset="">
+        <h1 class="subtitle" style="color: maroon; font-size: larger;">( -- Under Construction -- )</h1>
+        <img src="{{ url_for('static', path='favicon.ico') }}" alt="favicon">
         <p>Miniatures & Decorations for the Discerning Collector</p>
     </header>
 
-<span>
-</span>
-<hr>
-<p>
-This webpage is comming soon.
-the web imps are being mischevious in production causing setbacks.
-</p>
+    <hr>
+    <p>This webpage is coming soon. The web imps are being mischievous in production, causing setbacks.</p>
+    <p style="font-style: italic;">
+        They will soon find their respective restraints to keep them contained to task.
+    </p>
 
-<p style="font-style: italic; ">
-    they will soon find their repsective restraints to keep them containted to task.
-</p>
+    <h2 class="item-card" title="collection of v1 type features">** Features Coming Soon</h2>
 
-<h2 class="item-card" title="collection of v1 type features">** Features Coming Soon</h2>
-
-<span>
-
-
-</span>
-<div class="item-card"  style="width: fit-content; height: fit-content" >
-
-<ul>
-<li > A Delightful <span style="font-style: italic;">Little</span> Homepage</li>
-<li> Cusotum order forms (3D resin print)</li>
-<li><h2>Services</h2></li>
-<ul>
-    <li >Email order form</li>
-    <ul>
-        <li>3D Printing</li>
-        <li>Model Painting <strong>(base)</strong>
+    <div class="item-card" style="width: fit-content; height: fit-content;">
         <ul>
-            <li>Warhammer 40k and Fantasy</li>
-            <li>D&D</li>
-            <li>Star Wars</li>
+            <li>A Delightful <span style="font-style: italic;">Little</span> Homepage</li>
+            <li>Custom order forms (3D resin print)</li>
+            <li><h2>Services</h2></li>
+            <ul>
+                <li>Email order form</li>
+                <ul>
+                    <li>3D Printing</li>
+                    <li>Model Painting <strong>(base)</strong>
+                        <ul>
+                            <li>Warhammer 40k and Fantasy</li>
+                            <li>D&D</li>
+                            <li>Star Wars</li>
+                        </ul>
+                    </li>
+                </ul>        
+            </ul>
         </ul>
-        </li>
-    </ul>        
-</ul>
-</ul>
-</div>
+    </div>
 
-<hr>
-<h2 class="item-card" title="things that'll be added as they can, not a major priority">** Features Coming Later</h2>
+    <hr>
+    <h2 class="item-card" title="things that'll be added as they can, not a major priority">** Features Coming Later</h2>
 
-<div class="item-card"  style="width: fit-content; height: fit-content" >
+    <div class="item-card" style="width: fit-content; height: fit-content;">
+        <ul>
+            <li>Art gallery</li>
+            <ul>
+                <li>Past 3D prints</li>
+                <li>Model</li>
+            </ul>
+        </ul>
+    </div>
 
-<ul>
-<li> Art gallery</li>
-<ul>
-    <li>Past 3D prints</li>
-    <li>Model</li>
-</ul>
-</div>
-
-<span></span>
-<footer>
-    <a href="https://limitedprintworld.com">demo_link(does nothing)</a>
-</footer>
+    <footer>
+        <a href="https://limitedprintworld.com">demo_link (does nothing)</a>
+    </footer>
 </body>
 </html>
