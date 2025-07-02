@@ -110,6 +110,13 @@ app.mount("/templates", StaticFiles(directory=static_templates), name="templates
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 resources = Jinja2Templates(directory=static_dir)
 
+@app.get("/static/{path:path}")
+async def custom_static(path: str):
+    return FileResponse(
+        f"static/{path}",
+        headers={"Cache-Control": "no-cache, no-store, must-revalidate"}
+    )
+
 @app.get("/favicon.ico", response_class=FileResponse)
 def get_favicon(request: Request):
     '''adds a favicon to the title.'''
