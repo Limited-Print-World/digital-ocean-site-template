@@ -1,0 +1,6 @@
+@import url(/static/css/styles.css);
+
+.item-card {
+    transition: none;
+    border: maroon 6;
+}

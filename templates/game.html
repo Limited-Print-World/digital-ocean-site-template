@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limited Print World</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/static/manifest-game.json">
+
+</head>
+<body >
+    <header>
+        <h1 >Limited Print World</h1>
+        <h1 style="color: maroon;">( ~_~ Under Construction ~_~ )</h1>
+        <img src="/static/img/favicon.ico" alt="favicon">
+        <p style="font-size: x-large;" >Miniatures & Decorations for the Discerning Collector</p>
+    </header>
+    <div class="item-card" style="align-self: center; align-content: center;">
+    <table id="map" border="3" style="border-color: maroon;">
+        <tr>
+            <td>
+                <table id="map-controls">
+                    <tr>
+                        <td>
+                            <button >top button </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button >bot button </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table id="map-grid">
+                        <tr>
+                        <td>
+                            <button >something </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+       
+    </table>
+    </div>
+    <footer>
+        <a target="_self" href="https://limitedprintworld.com">demo_link (does nothing)</a>
+    </footer>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/static/sw.js");
+  }
+</script>
+</body>
+
+
+
+</html>

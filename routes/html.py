@@ -17,6 +17,9 @@ router = APIRouter()
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+@router.get("/rpg/survive", response_class=FileResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("game.html", {"request": request})
 
 @router.post("/submit-email", response_class=HTMLResponse)
 async def submit_email(request: Request, email: str = Form(...)):
