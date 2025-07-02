@@ -6,6 +6,8 @@
     <title>Limited Print World</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/static/manifest.json">
+
 </head>
 <body class="film-grain">
     <header>
@@ -75,4 +77,11 @@
         <a target="_blank" href="https://limitedprintworld.com">demo_link (does nothing)</a>
     </footer>
 </body>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/static/sw.js");
+  }
+</script>
+
 </html>
