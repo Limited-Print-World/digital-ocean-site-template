@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory="templates")
 resources = Jinja2Templates(directory="static")
+styles = Jinja2Templates(directory="static/css")
 router = APIRouter()
 
 @router.get("/", response_class=HTMLResponse)
@@ -22,6 +23,15 @@ def get_favicon(request: FileResponse):
 def get_favicon(request: FileResponse):
     '''adds a favicon to the title.'''
     return resources.TemplateResponse("static/img/raven_head_left.png")
+@router.get("/css/styles.css", response_class=FileResponse)
+def get_favicon(request: FileResponse):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse("styles.css")
+@router.get("/css/vars.css", response_class=FileResponse)
+def get_favicon(request: FileResponse):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse("vars.css")
+
 @router.post("/submit-email", response_class=HTMLResponse)
 async def submit_email(request: Request, email: str = Form(...)):
     return templates.TemplateResponse("index.html", {

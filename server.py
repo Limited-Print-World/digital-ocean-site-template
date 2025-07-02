@@ -103,16 +103,16 @@ with open("static/example.txt", "w") as f:
 app = FastAPI()
 
 
-# Mount routers
-app.include_router(html.router)
-app.include_router(api.router)
-app.include_router(dev.router)
-
 # Serve static files (CSS, JS)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Serve raw static HTML files from public/
 app.mount("/public", StaticFiles(directory="templates"), name="public")
+
+# Mount routers
+app.include_router(html.router)
+app.include_router(api.router)
+app.include_router(dev.router)
 
 # Attach Jinja template directory
 templates = Jinja2Templates(directory="templates")

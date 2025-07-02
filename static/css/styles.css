@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Crimson+Pro:ital,wght@1,600&display=swap');
-@import url('css/vars.css');
+@import url('vars.css');
 
 
 
@@ -103,7 +103,7 @@ li::before {
   left: 0;
   width: 32px;
   height: 32px;
-  background-image: url('/img/raven_head_left.png'); /* Change to your correct path */
+  background-image: url('http://limitedprintworld.com/img/raven_head_left.png'); /* Change to your correct path */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
