@@ -13,9 +13,11 @@ styles = Jinja2Templates(directory="static/css")
 
 router = APIRouter()
 
+verison = "0.0.2"
+
 @router.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request, "v_id": f"{verison}"})
 
 @router.get("/rpg/survive", response_class=FileResponse)
 async def index(request: Request):
