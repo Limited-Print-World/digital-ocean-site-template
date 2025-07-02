@@ -17,26 +17,6 @@ router = APIRouter()
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@router.get("/favicon.ico", response_class=FileResponse)
-def get_favicon(request: FileResponse):
-    '''adds a favicon to the title.'''
-    return resources.TemplateResponse(root/"/favicon.ico")
-@router.get("/img/favicon.ico", response_class=FileResponse)
-def get_favicon(request: FileResponse):
-    '''adds a favicon to the title.'''
-    return resources.TemplateResponse(root/"static/img/favicon.ico")
-@router.get("/img/raven_head_left.png", response_class=FileResponse)
-def get_favicon(request: FileResponse):
-    '''adds a favicon to the title.'''
-    return resources.TemplateResponse(root/"static/img/raven_head_left.png")
-@router.get("/css/styles.css", response_class=FileResponse)
-def get_favicon(request: FileResponse):
-    '''adds a favicon to the title.'''
-    return styles.TemplateResponse("styles.css")
-@router.get("/css/vars.css", response_class=FileResponse)
-def get_favicon(request: FileResponse):
-    '''adds a favicon to the title.'''
-    return styles.TemplateResponse("vars.css")
 
 @router.post("/submit-email", response_class=HTMLResponse)
 async def submit_email(request: Request, email: str = Form(...)):

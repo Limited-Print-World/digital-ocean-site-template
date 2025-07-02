@@ -25,6 +25,8 @@ static_css = static_dir/'styles.css'
 static_js = static_dir/'main.js'
 static_img_dir = static_dir/'img'
 
+static_templates = root/'templates'
+
 
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -102,12 +104,33 @@ with open("static/example.txt", "w") as f:
 
 app = FastAPI()
 
-
-# Serve static files (CSS, JS)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
 # Serve raw static HTML files from public/
-app.mount("/templates", StaticFiles(directory="templates"), name="templates")
+app.mount("/templates", StaticFiles(directory=static_templates), name="templates")
+# Serve static files (CSS, JS)
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+resources = Jinja2Templates(directory=static_dir)
+
+@app.get("/favicon.ico", response_class=FileResponse)
+def get_favicon(request: Request):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse(root/"static/img/favicon.ico")
+# @app.get("/img/favicon.ico", response_class=FileResponse)
+# def get_favicon(request: Request):
+#     '''adds a favicon to the title.'''
+#     return resources.TemplateResponse(root/"static/img/favicon.ico")
+@app.get("/img/raven_head_left.png", response_class=FileResponse)
+def get_favicon(request: Request):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse(root/"static/img/raven_head_left.png")
+@app.get("/css/styles.css", response_class=FileResponse)
+def get_favicon(request: Request):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse("css/styles.css")
+@app.get("/css/vars.css", response_class=FileResponse)
+def get_favicon(request: Request):
+    '''adds a favicon to the title.'''
+    return resources.TemplateResponse("css/vars.css")
+
 
 # Mount routers
 app.include_router(html.router)
