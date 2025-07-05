@@ -19,6 +19,14 @@ verison = "0.0.3"
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "v_id": f"{verison}"})
 
+@router.get("/credits", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("credits.html", {"request": request})
+
+@router.get("/robots.txt", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("robots.txt", {"request": request})
+
 @router.get("/rpg/survive", response_class=FileResponse)
 async def index(request: Request):
     return templates.TemplateResponse("game.html", {"request": request})
