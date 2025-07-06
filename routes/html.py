@@ -6,10 +6,10 @@ import os,sys,time,json
 
 root = Path(os.path.dirname( __file__ ))
 
-templates = Jinja2Templates(directory=root/"templates")
-forms = Jinja2Templates(directory=root/"templates/forms")
-static = Jinja2Templates(directory=root/"static")
-styles = Jinja2Templates(directory=root/"static/css")
+templates = Jinja2Templates(directory="templates")
+forms = Jinja2Templates(directory="templates/forms")
+static = Jinja2Templates(directory="static")
+styles = Jinja2Templates(directory="static/css")
 
 resources = [
     templates,
