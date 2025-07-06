@@ -6,10 +6,17 @@ import os,sys,time,json
 
 root = Path(os.path.dirname( __file__ ))
 
-templates = Jinja2Templates(directory="templates")
-resources = Jinja2Templates(directory="static")
-styles = Jinja2Templates(directory="static/css")
+templates = Jinja2Templates(directory=root/"templates")
+forms = Jinja2Templates(directory=root/"templates/forms")
+static = Jinja2Templates(directory=root/"static")
+styles = Jinja2Templates(directory=root/"static/css")
 
+resources = [
+    templates,
+    forms,
+    static,
+    styles
+]
 
 router = APIRouter()
 
@@ -33,7 +40,17 @@ async def index(request: Request):
 
 @router.post("/submit-email", response_class=HTMLResponse)
 async def submit_email(request: Request, email: str = Form(...)):
-    return templates.TemplateResponse("index.html", {
+    return templates.TemplateResponse("submit-email.html", {
         "request": request,
-        "message": f"Email submitted: {email}"
+        "message": f"Test Email submitted: {email}"
+    })
+@router.get("/forms", response_class=HTMLResponse)
+async def get_forms(request: Request, email: str = Form(...)):
+    links = []
+    for page in os.listdir(forms): 
+        links.append(page)
+    return templates.TemplateResponse("forms.html", {
+        "request": request,
+
+        "form_collection": f"{links}"
     })
