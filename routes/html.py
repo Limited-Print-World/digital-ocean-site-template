@@ -2,6 +2,7 @@ from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
+
 import os,sys,time,json
 
 root = Path(os.path.dirname( __file__ ))
@@ -44,12 +45,12 @@ async def submit_email(request: Request, email: str = Form(...)):
         "request": request,
         "message": f"Test Email submitted: {email}"
     })
-@router.get("/forms", response_class=HTMLResponse)
-async def get_forms(request: Request, email: str = Form(...)):
+@router.get("/forms", response_class=FileResponse)
+async def get_forms(request: Request, ):
     links = []
-    for page in os.listdir(forms): 
+    for page in os.listdir(root/"templates/forms"): 
         links.append(page)
-    return templates.TemplateResponse("forms.html", {
+    return forms.TemplateResponse("forms.html", {
         "request": request,
 
         "form_collection": f"{links}"
