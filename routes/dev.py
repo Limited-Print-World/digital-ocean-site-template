@@ -13,7 +13,7 @@ async def github_logs(request: Request):
     url = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/commits"
     async with httpx.AsyncClient() as client:
         r = await client.get(url)
-        commits = r.json()  # limit to latest 10
+        commits = r.json()[:10]  # limit to latest 10
 
     commit_data = [{
         "message": c["commit"]["message"],

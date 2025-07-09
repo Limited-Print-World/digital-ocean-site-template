@@ -13,7 +13,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
-from routes import html, api
 
 from routes import html, api, dev  # ⬅ add dev
 

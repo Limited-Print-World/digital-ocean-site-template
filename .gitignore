@@ -4,6 +4,4 @@
 *.pyc
 /routes/__pycache__
 /__pycache__
-/routes/__pycache__
-/__pycache__
-*.pyc
+*.__pycache__
