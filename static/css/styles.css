@@ -198,6 +198,7 @@ li:hover {
   z-index: 0;
   background-image: url('/static/img/film-1.gif');
   background-size: 100%;
+  background-blend-mode: color-burn;
   animation: grain-float 12s ease-in-out infinite alternate;
   mix-blend-mode: var(--highlight) difference;
   scroll-behavior: auto;
@@ -206,7 +207,7 @@ li:hover {
 /* Flicker animation that mimics a falling feather */
 @keyframes grain-float {
   0% {
-    transform: translateY(-0.5%) rotate(0deg);
+    transform: translateY(-0.25%) rotate(0deg);
     opacity: .25;
   }
   25% {
@@ -214,7 +215,7 @@ li:hover {
     opacity: .75;
   }
   50% {
-    transform: translateY(0.5%) rotate(0deg);
+    transform: translateY(0.25%) rotate(0deg);
     opacity: .85;
   }
   75% {
@@ -222,7 +223,41 @@ li:hover {
     opacity: 0.75;
   }
   100% {
-    transform: translateY(-0.5%) rotate(0deg);
+    transform: translateY(-0.25%) rotate(0deg);
     opacity: .25;
+  }
+}
+
+
+
+.shimmer-text {
+  font-weight: bold;
+  font-size: large; /* or use 2rem for better control */
+  font-variant: all-small-caps; /* or text-transform: uppercase; for all-caps */
+
+  /* Text gradient setup */
+  background: linear-gradient(
+    90deg,
+    maroon,
+    teal,
+    maroon
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;  /* For Safari */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari */
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 85% 35%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

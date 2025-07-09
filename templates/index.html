@@ -88,28 +88,39 @@
 
     <footer>
         <!-- <a target="_self" href="https://limitedprintworld.com/rpg/survive">demo_link (does nothing)</a> -->
+        
         <a href="https://limitedprintworld.com/credits">credits</a>
-        <a href="https://limitedprintworld.com/robots.txt"></a>
+        /
+        <strong class="shimmer-text" >Headmaster Email: </strong>
+        /
+        
+        <a  href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">limitedprintworld@proton.me</a>
+        /
+        <a title="notice anything strange? let me know!" href="mailto:pitherbro@proton.me">Support</a>
+
+        /
+        <a href="https://limitedprintworld.com/robots.txt">For the Souless(robots.txt)</a>
 
     </footer>
-</body>
 <script src="/static/js/main.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/static/sw.js').then(reg => {
+    navigator.serviceWorker.register('/static/sw.js').then(reg => {
     reg.onupdatefound = () => {
-      const newWorker = reg.installing;
-      newWorker.onstatechange = () => {
+        const newWorker = reg.installing;
+        newWorker.onstatechange = () => {
         if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-          if (confirm("New update available. Reload now?")) {
+            if (confirm("New update available. Reload now?")) {
             window.location.reload();
-          }
+            }
         }
-      };
+        };
     };
-  });
+    });
 }
 </script>
+</body>
+
 
 
 </html>

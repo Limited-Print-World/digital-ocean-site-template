@@ -1,13 +1,17 @@
-  
-.shimmer-text-capital .shimmer-text{
+/* .shimmer-text-capital .shimmer-text {
   font-size: large;
-  font-variant: small-caps;
-}
+  font-variant: all-small-caps;
+} 
+*/
+
 .shimmer-text {
   font-weight: bold;
+  font-size: large; /* or use 2rem for better control */
+  font-variant: all-small-caps; /* or text-transform: uppercase; for all-caps */
+
   /* Text gradient setup */
   background: linear-gradient(
-    98deg,
+    90deg,
     maroon,
     teal,
     maroon
@@ -42,7 +46,7 @@ li {
 transition: none;
 } */
 
-li::before{
+/* li::before{
 background-image: none;
 
-}
+} */
