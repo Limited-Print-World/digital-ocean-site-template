@@ -223,15 +223,15 @@ li:hover {
   }
   25% {
     transform: translateY(0%) rotate(0.5deg);
-    opacity: .75;
+    opacity: .55;
   }
   50% {
     transform: translateY(0.25%) rotate(0deg);
-    opacity: .85;
+    opacity: .65;
   }
   75% {
     transform: translateY(0%) rotate(0.5deg);
-    opacity: 0.75;
+    opacity: 0.55;
   }
   100% {
     transform: translateY(-0.25%) rotate(0deg);
@@ -247,29 +247,24 @@ li:hover {
 @keyframes picture-shift {
   0% {
     transform: translateY(-0.25%) rotate(0deg);
-    opacity: .25;
     border-radius: 35%;
   }
   25% {
     transform: translateY(0%) rotate(0.5deg);
-    opacity: .75;
     border-radius: 25%;
 
   }
   50% {
     transform: translateY(0.25%) rotate(0deg);
-    opacity: .85;
     border-radius: 45%;
 
   }
   75% {
     transform: translateY(0%) rotate(0.5deg);
-    opacity: 0.75;
     border-radius: 25%;
   }
   100% {
     transform: translateY(-0.25%) rotate(0deg);
-    opacity: .25;
     border-radius: 35%;
   }
 }
