@@ -13,7 +13,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
-from routes import html, api
 
 from routes import html, api, dev  # ⬅ add dev
 
@@ -118,25 +117,25 @@ async def custom_static(path: str):
     )
 
 @app.get("/favicon.ico", response_class=FileResponse)
-def get_favicon(request: Request):
+def get_favicon():
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse(root/"static/img/favicon.ico")
+    return FileResponse(static_dir/"img/favicon.ico")
 # @app.get("/img/favicon.ico", response_class=FileResponse)
 # def get_favicon(request: Request):
 #     '''adds a favicon to the title.'''
 #     return resources.TemplateResponse(root/"static/img/favicon.ico")
 @app.get("/img/raven_head_left.png", response_class=FileResponse)
-def get_favicon(request: Request):
+def get_favicon():
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse(root/"static/img/raven_head_left.png")
+    return FileResponse("/img/raven_head_left.png")
 @app.get("/css/styles.css", response_class=FileResponse)
 def get_favicon(request: Request):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("css/styles.css")
+    return resources.TemplateResponse("/css/styles.css")
 @app.get("/css/vars.css", response_class=FileResponse)
 def get_favicon(request: Request):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("css/vars.css")
+    return resources.TemplateResponse("/css/vars.css")
 
 
 # Mount routers

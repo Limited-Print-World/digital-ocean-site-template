@@ -1,5 +1,5 @@
-        const ambient = document.getElementById('ambient');
-        const bell = document.getElementById('bell');
+        const ambient = document.getElementById('ambient_auido');
+        const bell = document.getElementById('caw_audio');
 
         // Wait for user interaction to comply with browser autoplay policies
         document.body.addEventListener('click', () => {

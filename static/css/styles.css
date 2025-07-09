@@ -60,6 +60,7 @@ header p {
   background: inherit;
   color: inherit;
   border: none;
+  padding: 8px 12px;
   border-radius: 5px;
 }
 
@@ -187,7 +188,17 @@ li:hover {
     }
 }
 
-
+.film-grain-steady {
+  pointer-events: all;
+  position: inherit;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/static/img/film-1.gif');
+  background-size: 100%;
+  background-blend-mode: color-burn;
+  mix-blend-mode: var(--highlight) difference;
+  scroll-behavior: auto;
+}
 
 /* Grain overlay container */
 .film-grain {
@@ -197,9 +208,11 @@ li:hover {
   z-index: 0;
   background-image: url('/static/img/film-1.gif');
   background-size: 100%;
+  background-blend-mode: color-burn;
   animation: grain-float 12s ease-in-out infinite alternate;
   mix-blend-mode: var(--highlight) difference;
   scroll-behavior: auto;
+  border-radius: 75%;
 }
 
 /* Flicker animation that mimics a falling feather */
@@ -210,18 +223,104 @@ li:hover {
   }
   25% {
     transform: translateY(0%) rotate(0.5deg);
-    opacity: .75;
+    opacity: .55;
   }
   50% {
     transform: translateY(0.25%) rotate(0deg);
-    opacity: .85;
+    opacity: .65;
   }
   75% {
     transform: translateY(0%) rotate(0.5deg);
-    opacity: 0.75;
+    opacity: 0.55;
   }
   100% {
     transform: translateY(-0.25%) rotate(0deg);
     opacity: .25;
+  }
+}
+
+.icon {
+  animation: picture-shift 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes picture-shift {
+  0% {
+    transform: translateY(-0.25%) rotate(0deg);
+    border-radius: 35%;
+  }
+  25% {
+    transform: translateY(0%) rotate(0.5deg);
+    border-radius: 25%;
+
+  }
+  50% {
+    transform: translateY(0.25%) rotate(0deg);
+    border-radius: 45%;
+
+  }
+  75% {
+    transform: translateY(0%) rotate(0.5deg);
+    border-radius: 25%;
+  }
+  100% {
+    transform: translateY(-0.25%) rotate(0deg);
+    border-radius: 35%;
+  }
+}
+.slab {
+  background: transparent;
+  background-image: url(/static/img/slab-cropped.jpg);
+}
+
+.shimmer-text-rd-w {
+  font-weight: bold;
+  font-size: xx-large; /* or use 2rem for better control */
+  /* font-variant: small-caps;  */
+  /* or text-transform: uppercase; for all-caps */
+  text-transform: capitalize;
+  /* Text gradient setup */
+  background: linear-gradient(
+    270deg,
+    orange,
+    maroon,
+    orange
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;  /* For Safari */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari */
+  animation: shimmer 3s ease-in-out infinite;
+}
+.shimmer-text {
+  font-weight: bold;
+  font-size: xx-large; /* or use 2rem for better control */
+  font-variant: all-small-caps; /* or text-transform: uppercase; for all-caps */
+
+  /* Text gradient setup */
+  background: linear-gradient(
+    90deg,
+    maroon,
+    teal,
+    maroon
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;  /* For Safari */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari */
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 85% 35%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

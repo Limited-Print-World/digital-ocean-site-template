@@ -1,2 +1,7 @@
 
 /.venv
+*.pyc
+*.pyc
+/routes/__pycache__
+/__pycache__
+*.__pycache__

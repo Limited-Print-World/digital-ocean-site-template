@@ -19,6 +19,8 @@ message "ACTIVATING VENV"
 
 source $pythonSrc
 
+message "INSTALLING VENV DEPENDENCIES"
+
 pip install -r $pythonReq
 
 # python3 $pythonMain

@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
-     <link rel="stylesheet" href="https://limitedprintworld.com/static/css/styles.css">
-    <link rel="shortcut icon" href="https://limitedprintworld.com/static/favicon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="/static/css/styles.css">
+     <link rel="stylesheet" href="/static/css/forms.css">
+
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/static/manifest.json">
 </head>
-<body>
+<body class="film-grain-steady">
+<ul>
+    {% for item in form_collection %}
+    <li>
+        <a href="forms/{{ item }}"> {{ item }} </a> 
+    </li>
+    {% endfor %}
+</ul>
+<footer>
 
-{% for item in form_collection %}
-   <a href="forms/{{ item }}"></a> 
-{% endfor %}
-<a href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">Email: limitedprintworld@proton.me</a>
+<p >
+<strong class="shimmer-text" >Email: </strong>
+<a  href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">limitedprintworld@proton.me</a>
+<strong class="shimmer-text" style="font-size: large;" >Webmaster: </strong>
+<a title="notice anything strange? let me know!" href="mailto:pitherbro@proton.me">Tech Support</a>
+
+</p>
+
+</footer>
     
 </body>
 </html>
