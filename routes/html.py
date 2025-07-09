@@ -5,7 +5,7 @@ from pathlib import Path
 
 import os,sys,time,json
 
-root = Path(os.path.dirname( __file__ ))
+root = Path(os.path.dirname( __file__ )).parent
 
 templates = Jinja2Templates(directory="templates")
 forms = Jinja2Templates(directory="templates/forms")
@@ -21,7 +21,7 @@ resources = [
 
 router = APIRouter()
 
-verison = "0.0.3"
+verison = "0.0.4"
 
 @router.get("/", response_class=HTMLResponse)
 async def index(request: Request):
@@ -45,13 +45,16 @@ async def submit_email(request: Request, email: str = Form(...)):
         "request": request,
         "message": f"Test Email submitted: {email}"
     })
-@router.get("/forms", response_class=FileResponse)
+@router.get("/forms", response_class=HTMLResponse)
 async def get_forms(request: Request, ):
     links = []
     for page in os.listdir(root/"templates/forms"): 
-        links.append(page)
-    return forms.TemplateResponse("forms.html", {
-        "request": request,
+        pageName= page.split(".")[0]
+        print("#"*6)
 
-        "form_collection": f"{links}"
-    })
+        print(pageName, page)
+        print("#"*6)
+
+
+        links.append(pageName)
+    return templates.TemplateResponse("forms.html", {"request": request,"form_collection": links.copy() })

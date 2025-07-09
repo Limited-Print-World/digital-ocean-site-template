@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
-     <link rel="stylesheet" href="https://limitedprintworld.com/static/css/styles.css">
-    <link rel="shortcut icon" href="https://limitedprintworld.com/static/favicon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="/static/css/styles.css">
+     <link rel="stylesheet" href="/static/css/forms.css">
+
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/static/manifest.json">
 </head>
 <body>
 
 {% for item in form_collection %}
-   <a href="forms/{{ item }}"></a> 
+<a href="forms/{{ item }}"> {{ item }} </a> 
 {% endfor %}
-<a href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">Email: limitedprintworld@proton.me</a>
+<footer>
+<ul>
+    <li>
+<p>
+<strong class="shimmer-text-capital" >Email: </strong>
+<a  href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">limitedprintworld@proton.me</a>
+</p>
+
+    </li>
+</ul>    
+</footer>
     
 </body>
 </html>

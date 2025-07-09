@@ -1,0 +1,48 @@
+  
+.shimmer-text-capital .shimmer-text{
+  font-size: large;
+  font-variant: small-caps;
+}
+.shimmer-text {
+  font-weight: bold;
+  /* Text gradient setup */
+  background: linear-gradient(
+    98deg,
+    maroon,
+    teal,
+    maroon
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;  /* For Safari */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari */
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 85% 35%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+ul {
+list-style: none;
+}
+/* 
+li {
+
+transition: none;
+} */
+
+li::before{
+background-image: none;
+
+}

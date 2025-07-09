@@ -132,11 +132,11 @@ def get_favicon():
 @app.get("/css/styles.css", response_class=FileResponse)
 def get_favicon(request: Request):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("css/styles.css")
+    return resources.TemplateResponse("/css/styles.css")
 @app.get("/css/vars.css", response_class=FileResponse)
 def get_favicon(request: Request):
     '''adds a favicon to the title.'''
-    return resources.TemplateResponse("css/vars.css")
+    return resources.TemplateResponse("/css/vars.css")
 
 
 # Mount routers
