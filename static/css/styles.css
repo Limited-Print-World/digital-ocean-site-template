@@ -3,12 +3,15 @@
 
 
 p{
+  color: whitesmoke;
 
 }
-a::before{
-    color: aqua;
+a {
+  font-size: larger;
+  color: blue;
+  text-decoration: none;
 }
-a::after{
+a:after{
     color: maroon;
 }
 h1 {
@@ -101,7 +104,7 @@ header p {
 .item-card:hover {
     /* bump raise action on hover */
     transform: scale(1.03);
-    border-color: var(--highlight);
+    border-color: var(--text-light);
     color: brown;
 }
 .item-card h2 {
