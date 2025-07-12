@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send a Letter</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/generalQuery.css">
+</head>
+<body>
+<h1>General Inquirey</h1>
+    <p>
+Just don't spam us, <br>
+we're a small team of dedicated individuals seeking to provide some sustainable economic benifit to our selves and others.
+    </p>
+<p>
+It takes time to complete our multifacitude of duties and respectfully respond to letters.
+</p>
+<p>
+We look forward to hearing from everyone good or bad for any feedback
+
+</p>
+<div class="item-card">
+
+    <form action="/submit-email" method="post" enctype="multipart/form-data" autocomplete="off" >
+        <label for="name">Your Name (required):</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Doe"><br>
+        
+        <label for="sender_email">Your Email (required):</label>
+        <input type="email" id="sender_email" name="sender_email" required placeholder="jane@example.com"><br>
+        
+        <label for="subject">Subject (required):</label>
+        <input type="text" id="subject" name="subject" required placeholder="General Inquiry / 3D Print Request"><br>
+        
+        <label for="message">Message / Order Details (required):</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Describe your idea, feedback, or job request..."></textarea><br>
+        
+        <!-- File attachment -->
+        <label for="attachment">Attach a file (STL, PNG, etc.):</label>
+        <input type="file" id="attachment" name="attachment" accept=".stl,.png,.jpg,.jpeg,.pdf"><br>
+        
+        <!-- Simple honeypot anti-spam -->
+        <div style="display:none;">
+            <label>If you are human, leave this blank:</label>
+            <input type="text" name="website" value="">
+        </div>
+        
+        <!-- Math challenge anti-spam -->
+        <label for="antispam">What is 2 + 5?</label>
+        <input type="text" id="antispam" name="antispam" required placeholder="Your answer"><br>
+        
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+    
+</body>
+</html>

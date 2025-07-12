@@ -5,6 +5,16 @@ from pathlib import Path
 
 import os,sys,time,json
 
+
+from enum import Enum
+
+class FormName(str, Enum):
+    generalQuery = "generalQuery"
+    bulkRates = "bulkRates"
+    figures = "figures"
+    terrain = "terrain"
+
+
 root = Path(os.path.dirname( __file__ )).parent
 
 templates = Jinja2Templates(directory="templates")
@@ -45,6 +55,7 @@ async def submit_email(request: Request, email: str = Form(...)):
         "request": request,
         "message": f"Test Email submitted: {email}"
     })
+
 @router.get("/forms", response_class=HTMLResponse)
 async def get_forms(request: Request, ):
     links = []
@@ -57,3 +68,7 @@ async def get_forms(request: Request, ):
 
         links.append(pageName)
     return templates.TemplateResponse("forms.html", {"request": request,"form_collection": links.copy() })
+@router.get("/forms/{form_name}", response_class=HTMLResponse)
+async def get_forms(request: Request, form_name:FormName):
+    if form_name is form_name.generalQuery:
+        return forms.TemplateResponse(f"{form_name.generalQuery}.html", {"request": request,})
