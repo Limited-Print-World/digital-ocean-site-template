@@ -55,6 +55,5 @@ async def get_forms(request: Request, ):
         print(pageName, page)
         print("#"*6)
 
-
         links.append(pageName)
     return templates.TemplateResponse("forms.html", {"request": request,"form_collection": links.copy() })

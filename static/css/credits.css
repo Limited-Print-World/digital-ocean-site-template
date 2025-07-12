@@ -3,12 +3,13 @@ table {
     color: whitesmoke; font-weight: bold; font-size: large;
     border-color: black;
     border-style: groove;
-    border-top-left-radius: 8%;    
-    border-top-right-radius: 8%;    
-
+    border-top-left-radius: 9%;    
+    border-top-right-radius: 9%;    
+    border-bottom-left-radius: 3%;    
+    border-bottom-right-radius: 3%;    
+    
 }
 a {
-    target: _blank;
     color: turquoise;
     font-size: x-large;
 }
