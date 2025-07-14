@@ -35,11 +35,25 @@ verison = "0.0.4"
 
 @router.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "v_id": f"{verison}"})
+    varaible = "somethinGS"
+    return templates.TemplateResponse("index.html", {"request": request,\
+                                                     "v_id": f"{verison}"})
 
 @router.get("/credits", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("credits.html", {"request": request})
+    def header(title="", level=3):
+        """default page,"""
+        decorator="*"
+        return decorator*level + title.title() + decorator*level
+    creditsList = [
+        header("Graphical User Interface (GUI)"),
+        "Sound Effect by <a href="https://pixabay.com/users/fronbondi_skegs-23154649/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=359401">Gavin Mogensen</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=359401">Pixabay</a>",
+        header("sounds, effect, and ambience",),
+        "",
+    ]
+
+    return templates.TemplateResponse("credits.html", {"request": request,\
+                                                       "credList": creditsList})
 
 @router.get("/robots.txt", response_class=HTMLResponse)
 async def index(request: Request):
@@ -53,14 +67,16 @@ async def index(request: Request):
 async def submit_email(request: Request, email: str = Form(...)):
     return templates.TemplateResponse("submit-email.html", {
         "request": request,
-        "message": f"Test Email submitted: {email}"
+        "message": email
     })
 
 @router.get("/forms", response_class=HTMLResponse)
 async def get_forms(request: Request, ):
+
     links = []
+    
     for page in os.listdir(root/"templates/forms"): 
-        pageName= page.split(".")[0]
+        pageName=page.split(".")[0]
         print("#"*6)
 
         print(pageName, page)
@@ -70,5 +86,7 @@ async def get_forms(request: Request, ):
     return templates.TemplateResponse("forms.html", {"request": request,"form_collection": links.copy() })
 @router.get("/forms/{form_name}", response_class=HTMLResponse)
 async def get_forms(request: Request, form_name:FormName):
-    if form_name is form_name.generalQuery:
+    forms = FormName
+    forms.generalQuery
+    if form_name is forms.generalQuery:
         return forms.TemplateResponse(f"{form_name.generalQuery}.html", {"request": request,})

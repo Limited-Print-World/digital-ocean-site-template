@@ -108,7 +108,7 @@ header p {
 }
 .item-card:hover {
     /* bump raise action on hover */
-    transform: scale(1.03);
+    transform: scale(1.02);
     border-color: var(--text-light);
     color: brown;
 }
@@ -230,16 +230,16 @@ li:hover {
     opacity: .25;
   }
   25% {
-    transform: translateY(0%) rotate(0.5deg);
-    opacity: .55;
+    transform: translateY(0%) rotate(0.25deg);
+    opacity: .45;
   }
   50% {
     transform: translateY(0.25%) rotate(0deg);
-    opacity: .65;
+    opacity: .25;
   }
   75% {
-    transform: translateY(0%) rotate(0.5deg);
-    opacity: 0.55;
+    transform: translateY(0%) rotate(0.25deg);
+    opacity: 0.45;
   }
   100% {
     transform: translateY(-0.25%) rotate(0deg);
