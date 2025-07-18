@@ -245,7 +245,7 @@ li:hover {
 @keyframes grain-float {
   0% {
     transform: translateY(-0.25%) rotate(0deg);
-    opacity: .25;
+    opacity: .85;
   }
   25% {
     transform: translateY(0%) rotate(0.25deg);
@@ -253,7 +253,7 @@ li:hover {
   }
   50% {
     transform: translateY(0.25%) rotate(0deg);
-    opacity: .25;
+    opacity: .85;
   }
   75% {
     transform: translateY(0%) rotate(0.25deg);
@@ -261,7 +261,7 @@ li:hover {
   }
   100% {
     transform: translateY(-0.25%) rotate(0deg);
-    opacity: .25;
+    opacity: .85;
   }
 }
 
