@@ -21,7 +21,7 @@
   -webkit-background-clip: text;  /* For Safari */
   color: transparent;
   -webkit-text-fill-color: transparent; /* For Safari */
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 9s ease-in-out infinite;
 }
 
 @keyframes shimmer {

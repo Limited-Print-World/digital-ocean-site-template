@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limited Print World</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/static/manifest.json">
 
 </head>
@@ -20,76 +20,148 @@
         <h1 >Limited Print World</h1>
         <h1 style="color: maroon;">( ~_~ Under Construction ~_~ )</h1>
         <p style="font-style: italic; font-size: 200%;"><strong>(~Version_{{ v_id }})</strong></p>
-        <img src="/static/img/favicon.ico" alt="favicon" class="icon">
+        <img src="/static/img/favicon.ico" alt="favicon" class="icon" fetchpriority=high>
         <p style="font-size: 225%;" >Miniatures & Decorations for the Discerning Collector</p>
     
     <!-- Ambient background sound -->
-    <audio id="ambient_auido" src="/static/audio/ambient.mp3" autoplay="true" loop></audio>
+    <!-- <audio id="ambient_auido" src="/static/audio/ambient.mp3" autoplay="true" loop></audio> -->
+    <audio id="ambient_auido" src="https://youtu.be/r4DI0-NW2LU" autoplay="true" loop></audio>
 
     <!-- Bell sound -->
     <audio id="caw_audio" src="/static/audio/caw.mp3"></audio>
     </header>
+    <div class="tooltip-container">
+        <p  style="font-size: x-large;">This webpage is coming soon. <br>
+            The web imps are being mischievous in production, causing setbacks. <br>    
+            They will soon find their respective restraints to keep them contained to task.
+        </p>
+    </div>
 
-    <p class="shimmer-text-rd-w" style="font-size: x-large;">This webpage is coming soon. <br>
-        The web imps are being mischievous in production, causing setbacks. <br>    
-        They will soon find their respective restraints to keep them contained to task.
-    </p>
-    
+
+<table style="align-items: start ; scrollbar-color: maroon; scroll-behavior: smooth; scrollbar-width: auto;">
+    <th>
         <div class="tooltip-container">
-    <button class="tooltip-button" tabindex="0"><h2 class="item-card">** Features Coming Soon </h2> </button>
+            <button class="tooltip-button" tabindex="0"><h2 class="item-card">** Features Coming Soon </h2> </button>
             <div class="tooltip-content">collection of v1 type features
             </div>
         </div> 
+    </th>
+    <th>
 
-    <div class="item-card" style="width: fit-content; height: fit-content;">
-        <ul>
-            <li>A Delightful <span style="font-style: italic;">Little</span> Homepage</li>
-            <li><a href="/forms">Custom order forms (3D resin print)</a></li>
-            <li><h2>Services</h2>
-            <ul>
-                <li>Email order form</li>
+        <div class="tooltip-container">
+            <button class="tooltip-button" tabindex="0">
+                <h2 class="item-card">** Features Coming Later</h2>
+            </button>
+                <div class="tooltip-content">things that'll be added as they can, not a major priority</div>
+        </div> 
+    </th>
+    <th>
+
+        <div class="tooltip-container">
+            <button class="tooltip-button" tabindex="0">
+                <h2 class="item-card">** In The Works</h2>
+            </button>
+                <div class="tooltip-content">whatever is tickling the tech wizzard's whims</div>
+        </div> 
+    </th>
+
+<!-- SPACER -->
+    <tr>
+        <td colspan="3">
+            <hr>
+        </td>
+    </tr>
+    <tr scrollable="true" >
+<!-- Cell #1 -->
+        <td>
+            <div class="item-card" style="width: fit-content; height: fit-content;">
                 <ul>
-                    <li>3D Printing</li>
-                    <li>Model Painting <strong>(base)</strong>
+                    <li>A Delightful <span style="font-style: italic;">Little</span> Homepage</li>
+                    <li><a href="/forms"></a>Custom order forms (3D resin print)</li>
+                    <li><h2>Services</h2>
+                    <ul>
+                        <li>Email order form</li>
                         <ul>
-                            <li>Warhammer 40k and Fantasy</li>
-                            <li>D&D</li>
-                            <li>Star Wars</li>
-                        </ul>
+                            <li>3D Printing</li>
+                            <li>Model Painting <strong>(base)</strong>
+                                <ul>
+                                    <li>Warhammer 40k and Fantasy</li>
+                                    <li>D&D</li>
+                                    <li>Star Wars</li>
+                                </ul>
+                            </li>
+                        </ul>        
+                    </ul>
                     </li>
-                </ul>        
-            </ul>
-            </li>
 
-        </ul>
-    </div>
+                </ul>
+            </div>
+        </td>
 
-
-    <div class="tooltip-container">
-    <button class="tooltip-button" tabindex="0">
-        <h2 class="item-card">** Features Coming Later
-        </h2>
-    </button>
-        <div class="tooltip-content">things that'll be added as they can, not a major priority
-        </div>
-    </div> 
-<span></span>
+<!-- Cell #2 -->
+    <td>
     <div class="item-card" style="width: fit-content; height: fit-content;">
         <ul>
             <li>Art gallery</li>
-            <ul>
-                <li>Past 3D prints</li>
-                <li>Model</li>
-            </ul>
+            <li>3D Print Timelapses</li>
+            <li>Model Templates/Workstations
+                <ul>
+                    <li><a target="_blank" href="https://www.heroforge.com/">heroforge.com</a></li>
+                    <li><a target="_blank" href="https://www.blender.org/about/foundation/">blender(about)</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
+    </td>
+<!-- Cell #3 -->
+            <td>
+<h2 class="item-card-box">**AKA Derrainged Dev Scrawlings</h2>
+            <div class="item-card" style="width: fit-content; height: fit-content;">
+                <ul>
+                    <li>Training Weights
+                        <ul>
+                            <li>Stylings (a constant adaptation)</li>
+                            <li>Ambience
+                                <ul>
+                                    <li>additional tracks</li>
+                                    <li>mixing some new ones</li>
+                                    <li>playlist logic</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
 
+                    </li>
+                    <li>Pages
+                        <ul>
+                            <li>Ordering Templates</li>
+                        </ul>
+                    </li>
+                    <li>Behind The Scenes
+                        <ul>
+                            <li>Wizzardry and Gadgetry the linkes you've never seen.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </td> 
+
+    </tr>
+<!-- SPACER -->
+    <tr>
+        <td colspan="3">
+            <hr>
+        </td>
+    </tr>
+</table>
+        
     <footer>
         <!-- <a target="_self" href="https://limitedprintworld.com/rpg/survive">demo_link (does nothing)</a> -->
         
         <a href="/credits">credits</a>
-        |+|
-        
+        | <strong style="color: blue; font-size: large;">+</strong> |
+
         <a href="https://limitedprintworld.com/robots.txt">For the Souless(robots.txt)</a>
 
     </footer>
@@ -98,14 +170,21 @@
         <!-- <a target="_self" href="https://limitedprintworld.com/rpg/survive">demo_link (does nothing)</a> -->
      <strong class="shimmer-text" style="font-size: large;" >Headmaster Email: </strong>
         <a  href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">limitedprintworld@proton.me</a>
-        |+|
+        | <strong style="color: blue;">+</strong> |
         
         <strong class="shimmer-text" style="font-size: large;" >Summon Tech Wizzard: </strong>
         <a title="notice anything strange? let me know!" href="mailto:pitherbro@proton.me">Support</a>
 
         
     </footer>
+    <!-- 
+core logic/additional steps    
+-->
 <script src="/static/js/main.js"></script>
+<!-- 
+for mobile web applicaitons
+also handles some caching behavior
+-->
 <script>
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/static/sw.js').then(reg => {

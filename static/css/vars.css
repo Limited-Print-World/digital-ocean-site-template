@@ -1,9 +1,13 @@
 :root {
     --bg-dark: hsl(48, 62%, 43%);
     --bg-panel: #b3a364;
-    --text-light: #715c0b;
-    --text-accent: #715c0b;
-    --highlight: #72673a;
+    /* --text-light: #715c0b;
+    --text-accent: #715c0b; */
+    --text-light: whitesmoke;
+    --text-alert: maroon;
+    /* --highlight: #72673a; */
+    --text-accent: gray;
+    --highlight: #c9b977;
     --card-border: #39331b;
     --font-main: 'Crimson Pro', serif;
     --font-title: 'UnifrakturCook', cursive, bold;
