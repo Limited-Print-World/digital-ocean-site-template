@@ -9,11 +9,14 @@ p{
 a {
   font-size: larger;
   /* color: blue; */
-  color: whitesmoke;
+  color: blue;
   text-decoration: none;
 }
-a:after{
-    color: maroon;
+a::after{
+    color: var(--text-alert);
+}
+a:hover{
+  color: var(--text-light);
 }
 h1 {
     color: #514308;
@@ -27,13 +30,7 @@ img {
     width: 128px;
     height: 128px;
 }
-body {
-    margin: 0;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-main);
-    line-height: 1.6;
-}
+/*  */
 header {
     background-color: var(--bg-panel);
     text-align: center;
@@ -48,9 +45,28 @@ header h1 {
 }
 header p {
     font-size: 1.2rem;
-    color: var(--text-accent);
+    color: var(--text-light);
     margin-top: 0.5rem;
 }
+/*  */
+body {
+    margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+/*  */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    background-color: var(--bg-panel);
+    border-top: 1px solid var(--highlight);
+}
+
+
 #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +95,7 @@ header p {
   left: 0;
   margin-top: 6px;
   background: var(--card-border);
-  color: var(--bg-dark);
+  color: var(--text-light);
   padding: 8px;
   border-radius: 4px;
   width: max-content;
@@ -139,14 +155,7 @@ header p {
     font-size: 0.9rem;
     color: #715c0b;
 }
-footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
-    color: #715c0b;
-    background-color: var(--bg-panel);
-    border-top: 1px solid var(--highlight);
-}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -158,6 +167,7 @@ li {
   margin-bottom: 16px;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  color: var(--text-light);
 }
 
 li::before {
@@ -179,7 +189,7 @@ li:hover::before {
 }
 
 li:hover {
-  color: #2a2923;
+  color: var(--text-alert);
 }
 .raven-icon {
     width: 32px;
@@ -239,7 +249,7 @@ li:hover {
   }
   25% {
     transform: translateY(0%) rotate(0.25deg);
-    opacity: .45;
+    opacity: .55;
   }
   50% {
     transform: translateY(0.25%) rotate(0deg);
@@ -247,7 +257,7 @@ li:hover {
   }
   75% {
     transform: translateY(0%) rotate(0.25deg);
-    opacity: 0.45;
+    opacity: 0.55;
   }
   100% {
     transform: translateY(-0.25%) rotate(0deg);

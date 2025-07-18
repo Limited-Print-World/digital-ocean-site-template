@@ -4,8 +4,9 @@
     /* --text-light: #715c0b;
     --text-accent: #715c0b; */
     --text-light: whitesmoke;
+    --text-alert: maroon;
     /* --highlight: #72673a; */
-    --text-accent: whitesmoke;
+    --text-accent: gray;
     --highlight: #c9b977;
     --card-border: #39331b;
     --font-main: 'Crimson Pro', serif;
