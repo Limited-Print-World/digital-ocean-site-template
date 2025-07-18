@@ -14,7 +14,7 @@ from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 # https://documentation.bloomreach.com/engagement/docs/datastructures
-from routes import html, api, dev  # ⬅ add dev
+from routes import html, api, dev,forms  # ⬅ add dev
 
 
 root = Path(os.path.dirname( __file__ ))
@@ -113,6 +113,7 @@ resources = Jinja2Templates(directory=static_dir)
 async def custom_static(path: str):
     return FileResponse(
         f"static/{path}",
+        # keeps cache fresh for easier client side updates during hot dev times.
         headers={"Cache-Control": "no-cache, no-store, must-revalidate"}
     )
 
@@ -142,6 +143,7 @@ def get_favicon(request: Request):
 app.include_router(html.router)
 app.include_router(api.router)
 app.include_router(dev.router)
+app.include_router(html.forms_router)
 
 # Attach Jinja template directory
 templates = Jinja2Templates(directory="templates")

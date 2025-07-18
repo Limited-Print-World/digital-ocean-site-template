@@ -106,6 +106,15 @@ header p {
     box-shadow: 0 0 10px #41404066;
     transition: transform 0.3s;
 }
+.item-card-box {
+    /* a space to place content */
+    background-color: var(--bg-panel);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10%;
+    box-shadow: 0 0 10px #41404066;
+    transition: transform 0.3s;
+}
 .item-card:hover {
     /* bump raise action on hover */
     transform: scale(1.02);
@@ -115,13 +124,12 @@ header p {
 .item-card h2 {
     margin: 0;
     font-size: 1.5rem;
-    color: var(--highlight);
+    color: var(--text-light);
 }
 .item-card:focus h2 {
     margin: 0;
     font-size: 1.5rem;
-    color: var(--highlight);
-    title: "hello there";
+    color: var(--text-light);
 }
 .item-card .status {
     font-style: italic;

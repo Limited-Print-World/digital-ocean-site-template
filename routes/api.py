@@ -3,7 +3,7 @@ import time
 from fastapi import APIRouter, Form
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 
-router = APIRouter()
+router = APIRouter( prefix="/api")
 
 @router.get("/file")
 async def get_file():
