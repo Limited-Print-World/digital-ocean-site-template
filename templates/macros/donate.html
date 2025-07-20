@@ -1,0 +1,173 @@
+{# macros/donate.html #}
+{% macro btc_donate_button(btc_address="bc1qps72j3vyglrcgqamjdjh0kgeynnlhs7cmncr5m") %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+.btc-donate-popover {
+  display: none;
+  position: absolute;
+  min-width: 295px;
+  max-width: 340px;
+  z-index: 2000;
+  background: #fffbe6;
+  border: 2px solid #f2a900;
+  border-radius: 14px;
+  box-shadow: 0 8px 40px #0002;
+  padding: 1.2em 1.1em 1.1em 1.1em;
+  text-align: center;
+  animation: popIn 0.18s cubic-bezier(.77,0,.18,1);
+  left: 0; top: 0;
+}
+@keyframes popIn {
+  from { transform: scale(0.92); opacity:0; }
+  to { transform: scale(1); opacity:1; }
+}
+.btc-donate-popover .close {
+  position: absolute;
+  top: 0.5em; right: 0.8em;
+  font-size: 1.2em;
+  color: #f2a900;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.btc-donate-btn {
+  background: #f2a900;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 7px;
+  padding: 0.65em 1.4em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px #f2a90030;
+  cursor: pointer;
+  transition: background 0.16s, box-shadow 0.18s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  position: relative;
+}
+.btc-donate-btn:hover, .btc-donate-btn:focus {
+  background: #fffbe6;
+  color: #f2a900;
+  box-shadow: 0 2px 24px #f2a90077;
+  outline: none;
+}
+.btc-donate-btn[data-tooltip]:hover:after {
+  content: attr(data-tooltip);
+  background: #333; color: #fff;
+  font-size: 0.93em;
+  padding: 0.34em 0.7em;
+  border-radius: 6px;
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: -2.2em;
+  white-space: nowrap;
+  opacity: 0.96;
+  pointer-events: none;
+}
+.btc-copy-msg {
+  font-size: 0.82em;
+  color: #10b981;
+  margin-top: 0.38em;
+  display: none;
+}
+</style>
+
+<div style="display:inline-block; position:relative;">
+  <button id="btc-donate-btn" type="button" class="btc-donate-btn" data-tooltip="Support us with Bitcoin!">
+    <i class="fa-brands fa-btc"></i>
+    Donate Bitcoin
+  </button>
+
+  <div id="btc-popover" class="btc-donate-popover">
+    <button class="close" onclick="closeBTCModal()" aria-label="Close">&times;</button>
+    <div>
+      <i class="fa-brands fa-btc" style="font-size:2em; color:#f2a900; margin-bottom: 0.3em;"></i>
+    </div>
+    <div style="margin-top:0.5em; font-weight:bold; color:#222;">
+      Donate Bitcoin
+    </div>
+    <div style="margin:0.5em 0 0.2em 0; word-break:break-all; font-size:0.97em; color:#444;" id="btc-address">
+      {{ btc_address }}
+    </div>
+    <button onclick="copyBTC()" style="margin-top:0.4em; background:#f2a900; border:none; border-radius:6px; padding:0.5em 1em; color:#fff; font-weight:bold; cursor:pointer;">
+      <i class="fa fa-copy"></i> Copy Address
+    </button>
+    <div id="btc-copy-msg" class="btc-copy-msg">
+      Address copied!
+    </div>
+    <div style="font-size:0.8em; color:#888; margin-top:0.7em;">
+      Thank you for supporting us!
+    </div>
+  </div>
+</div>
+
+<script>
+// Improved positioning to always show above and to the left, never off-screen
+function openBTCModal() {
+  var btn = document.getElementById('btc-donate-btn');
+  var pop = document.getElementById('btc-popover');
+
+  pop.style.display = "block";
+  // Allow DOM to update for measurement
+  setTimeout(function() {
+    var btnRect = btn.getBoundingClientRect();
+    var popRect = pop.getBoundingClientRect();
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+
+    // Default: above, left-aligned to button
+    var left = btnRect.left + scrollLeft;
+    var top = btnRect.top + scrollTop - popRect.height - 12;
+
+    // If above would go off screen, put below
+    if (top < 0) {
+      top = btnRect.bottom + scrollTop + 8;
+    }
+    // If left would go off-screen, nudge right
+    if (left < 8) left = 8;
+    // If right side goes off-screen, nudge left
+    if (left + popRect.width > window.innerWidth) {
+      left = window.innerWidth - popRect.width - 8;
+      if (left < 8) left = 8;
+    }
+
+    pop.style.left = left + "px";
+    pop.style.top = top + "px";
+    // Focus close button for accessibility
+    pop.querySelector('.close').focus();
+  }, 10);
+}
+
+function closeBTCModal() {
+  document.getElementById('btc-popover').style.display = 'none';
+}
+
+function copyBTC() {
+  const address = document.getElementById("btc-address").textContent.trim();
+  navigator.clipboard.writeText(address).then(function() {
+    let msg = document.getElementById('btc-copy-msg');
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 1200);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btc-donate-btn').onclick = function(e) {
+    e.stopPropagation();
+    openBTCModal();
+  };
+  // Close popover if clicking outside
+  document.addEventListener('click', function(e) {
+    let pop = document.getElementById('btc-popover');
+    let btn = document.getElementById('btc-donate-btn');
+    if (pop.style.display === "block" && !pop.contains(e.target) && e.target !== btn) {
+      closeBTCModal();
+    }
+  });
+  // Prevent click inside modal from bubbling
+  document.getElementById('btc-popover').onclick = function(e) { e.stopPropagation(); };
+});
+</script>
+{% endmacro %}

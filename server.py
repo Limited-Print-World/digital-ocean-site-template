@@ -141,9 +141,9 @@ def get_favicon(request: Request):
 
 # Mount routers
 app.include_router(html.router)
+app.include_router(html.forms_router)
 app.include_router(api.router)
 app.include_router(dev.router)
-app.include_router(html.forms_router)
 
 # Attach Jinja template directory
 templates = Jinja2Templates(directory="templates")

@@ -78,7 +78,7 @@
                 <ul>
                     <li>A Delightful <span style="font-style: italic;">Little</span> Homepage</li>
                     <li><a href="/forms"></a>Custom order forms (3D resin print)</li>
-                    <li><h2>Services</h2>
+                    <li>Services
                     <ul>
                         <li>Email order form</li>
                         <ul>
@@ -104,10 +104,11 @@
         <ul>
             <li>Art gallery</li>
             <li>3D Print Timelapses</li>
-            <li>Model Templates/Workstations
+            <li><p title="Software considerations for submitting STL files.">*Modeling Templates/Software</p>
                 <ul>
                     <li><a target="_blank" href="https://www.heroforge.com/">heroforge.com</a></li>
                     <li><a target="_blank" href="https://www.blender.org/about/foundation/">blender(about)</a></li>
+                    <li><a target="_blank" href="https://skycad.ca/features.php">skycad(more technical prints)</a></li>
                 </ul>
             </li>
         </ul>
@@ -140,7 +141,7 @@
                     </li>
                     <li>Behind The Scenes
                         <ul>
-                            <li>Wizzardry and Gadgetry the linkes you've never seen.</li>
+                            <li>Wizzardry and Gadgetry the likes you've never seen.</li>
                         </ul>
                     </li>
                 </ul>
@@ -165,8 +166,9 @@
         <a href="https://limitedprintworld.com/robots.txt">For the Souless(robots.txt)</a>
 
     </footer>
-    <footer style="background-color: transparent;"></footer>
-    <footer>
+    <!-- spacer -->
+<footer style="background-color: transparent;"></footer>
+<footer>
         <!-- <a target="_self" href="https://limitedprintworld.com/rpg/survive">demo_link (does nothing)</a> -->
      <strong class="shimmer-text" style="font-size: large;" >Headmaster Email: </strong>
         <a  href="mailto:limitedprintworld@proton.me" title="limitedprintworld@proton.me">limitedprintworld@proton.me</a>
@@ -174,9 +176,17 @@
         
         <strong class="shimmer-text" style="font-size: large;" >Summon Tech Wizzard: </strong>
         <a title="notice anything strange? let me know!" href="mailto:pitherbro@proton.me">Support</a>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<h2>Additional Support</h2>
+<hr>
+        <!-- bitcoin donate button -->
+    {% import "macros/donate.html" as donate %}
 
-        
-    </footer>
+    <div style="margin-top: 2em; margin-bottom: 2em;">
+        {{ donate.btc_donate_button(btc_address="bc1qps72j3vyglrcgqamjdjh0kgeynnlhs7cmncr5m") }}
+    </div>
+
+</footer>
     <!-- 
 core logic/additional steps    
 -->

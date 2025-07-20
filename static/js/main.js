@@ -15,4 +15,8 @@ setInterval(() => {
     }, 35000);
 }
 
+/*
+// template functions.
+*/
+
 init()
