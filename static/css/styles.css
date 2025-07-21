@@ -355,3 +355,82 @@ li:hover {
     background-position: 0% 50%;
   }
 }
+/* Optional scrollbar styling (for Webkit browsers) */
+::-webkit-scrollbar { height: 10px; }
+::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 6px; }
+::-webkit-scrollbar-track { background: #f3f3f3; border-radius: 7px; }
+
+
+.feature-scrollbar {
+  display: flex;
+  gap: 2em;
+  overflow-x: auto;
+  padding-bottom: 1em;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: maroon #f9f9f9;
+  scroll-behavior: smooth;
+  margin: 2em 0;
+}
+.feature-card {
+  flex: 0 0 320px;
+  min-width: 280px;
+  max-width: 360px;
+  background: #fffbe6;
+  border: 2px solid #a0522d;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px #a0522d14;
+  padding: 1.3em 1em 1em 1em;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.item-card {
+  margin: 0;
+  font-size: 1.12em;
+  color: maroon;
+  font-weight: bold;
+  background: none;
+  border: none;
+}
+.item-card-content ul {
+  margin: 0.7em 0 0 0.2em;
+  padding-left: 1.2em;
+  font-size: 1em;
+  color: #333;
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.4em;
+}
+.tooltip-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  padding: 0;
+}
+.tooltip-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 120%;
+  z-index: 10;
+  background: #fff;
+  color: #a0522d;
+  border: 1px solid #a0522d;
+  border-radius: 7px;
+  box-shadow: 0 2px 9px #a0522d22;
+  padding: 0.7em 1em;
+  min-width: 200px;
+  font-size: 0.97em;
+}
+.tooltip-container:focus-within .tooltip-content,
+.tooltip-container:hover .tooltip-content {
+  display: block;
+}
+@media (max-width: 900px) {
+  .feature-card { min-width: 80vw; }
+}
