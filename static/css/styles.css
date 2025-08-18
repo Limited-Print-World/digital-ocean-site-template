@@ -4,7 +4,7 @@
 
 @import url('/static/css/vars.css');
 
-
+/* BASIC ELEMENT STYLINGS */
 p{
   color: whitesmoke;
 
@@ -72,6 +72,8 @@ footer {
 hr {
   color: var(--text-light);
 }
+
+/* CUSTOM ELEMENTS */
 #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -385,7 +387,7 @@ li:hover {
   flex-direction: column;
   align-items: stretch;
 }
-.item-card {
+/* .item-card {
   margin: 0;
   font-size: 1.12em;
   color: maroon;
@@ -433,4 +435,4 @@ li:hover {
 }
 @media (max-width: 900px) {
   .feature-card { min-width: 80vw; }
-}
+} */

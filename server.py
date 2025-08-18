@@ -13,8 +13,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
+
 # https://documentation.bloomreach.com/engagement/docs/datastructures
-from routes import html, api, dev,forms  # ⬅ add dev
+from routes import html, api, dev, forms  # ⬅ add dev
 
 
 root = Path(os.path.dirname( __file__ ))

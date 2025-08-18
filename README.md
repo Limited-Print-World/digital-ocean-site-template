@@ -1,6 +1,10 @@
-# ['website'](./README.md)
 
-a place to build cool stuff and see awesome things
+# [contributing-standards](./md/CONTRIBUTING.md)
+
+
+
+#
+A place to build cool stuff and see awesome things
 
 # Stylings
 
@@ -28,6 +32,7 @@ a place to build cool stuff and see awesome things
 </table>
 
 ## Testing
+
 [html validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Flimitedprintworld.com%2F)
 [css validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flimitedprintworld.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
