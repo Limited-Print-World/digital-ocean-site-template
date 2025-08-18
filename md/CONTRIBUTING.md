@@ -11,20 +11,23 @@
 - OS: Linux (debian/ubuntu tested)
 - Python 3.x
 
+> ### System
 
-## System
+
 [*FILE](../bash/depends.txt) - contained in `./bash/depends.txt`
 
 
     These have to be installed manually until we create a "install" process to keep app from running in root mode
+
 - python-venv
 - something for pdf generator.
-## Python
+
+> ### Python
 
 
 [*FILE](../requirements.txt) - contained in `./requirements.txt`
 
-    we try to include links to documentation/formating for each module.
+we try to include links to documentation/formating for each module.
 - [fastapi](https://fastapi.tiangolo.com/tutorial/first-steps/)
     - handles web serving as an app, from `server.py`
     - [python-multipart](https://multipart.fastapiexpert.com/)
@@ -37,7 +40,9 @@
     - needs killed and rebooted if the Python logic changes, html stuff is fine
 - [httpx](https://www.python-httpx.org/)
     - not sucessfully used just yet but will be for further web scraping/local testing/post/get needs.
-    - attempting to check/pull current git, requires an SSH key to auth the call. (***NOTE:*** keys need to be managed better)
+    - attempting to check/pull current git, requires an SSH key to auth the call. 
+    
+> ***NOTE:*** all keys need to be managed better
 
 
 # Running
@@ -66,12 +71,15 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 
 # Developing
 
-    My Environment
+>My Environment
 
 - Github/GithubDesktop
 - VS Code
 
-    Routines
+
+>Routines
+
+
 - upload after finishing, just note whatever you did.
 
     General Notes
@@ -79,5 +87,5 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 - add any System dependencies you find are needed to the `./bash/depends.txt`
 - if you do add a dependcy try to add it to this list, with the same sort of note structure.
 
-***ALL** commits should be to the `dev` branch on git hub, so they can be reviewed/tested before going live on `main`.
+**\*ALL** commits should be to the `dev` branch on Github, so they can be reviewed/tested before going live on `main`.
 additional branches should derive from `dev` like so `dev-name-feature` this way less conflicts will arrise when merging.
