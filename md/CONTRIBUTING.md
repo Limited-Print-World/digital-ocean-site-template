@@ -42,7 +42,7 @@
 
 # Running
 
-`run.sh` script is only built to run on linux, needs to be run in a vm container or an equivalnt `run.bat` needs to be made for windows testing. 
+`run.sh` script is only built to run on linux, needs to be run in a vm container or an equivalent `run.bat` needs to be made for windows testing. 
 
 Another solution is to use [cygwin](https://cygwin.com/) or Windows Subsystem for Linux if you're upgraded to Windows 11.
 
@@ -70,6 +70,7 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 
 - Github/GithubDesktop
 - VS Code
+
     Routines
 - upload after finishing, just note whatever you did.
 
@@ -78,4 +79,5 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 - add any System dependencies you find are needed to the `./bash/depends.txt`
 - if you do add a dependcy try to add it to this list, with the same sort of note structure.
 
-**ALL** commits should be to the `dev` branch on git hub, so they can be reviewed 
+***ALL** commits should be to the `dev` branch on git hub, so they can be reviewed/tested before going live on `main`.
+additional branches should derive from `dev` like so `dev-name-feature` this way less conflicts will arrise when merging.
