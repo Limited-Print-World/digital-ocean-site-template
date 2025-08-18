@@ -1,3 +1,10 @@
+`run.sh` script is only built to run on linux, needs to be run in a vm container or an equivalnt `run.bat` needs to be made for windows testing. 
+
+Another solution is to use [cygwin](https://cygwin.com/) or Windows Subsystem for Linux if you're upgraded to Windows 11.
+
+Windows did not allow easy venv use for Python and this is hosted on a Linux Server anyway.
+
+
 - [git-readme](../README.md)
     - back home
 - [digital-ocean](./md//digital-ocean-readme.md)
@@ -22,7 +29,6 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 - OS: Linux (debian/ubuntu tested)
 - Python 3.x
 
-    `run.sh`script is only built to run on linux, needs to be run in a vm container, or an equivalnt `run.bat` needs to be made for windows testing. Another solution is to use MinWin
 
 ## System
 [*FILE](../bash/depends.txt) - contained in `./bash/depends.txt`
@@ -34,7 +40,7 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 ## Python
 
 
-[*FILE](../requirements.txt) - contained in `requirements.txt`
+[*FILE](../requirements.txt) - contained in `./requirements.txt`
 
     we try to include links to documentation/formating for each module.
 - [fastapi](https://fastapi.tiangolo.com/tutorial/first-steps/)
@@ -50,3 +56,5 @@ most top level routes are split off into `./routes/` with `html` serving the hom
 - [httpx](https://www.python-httpx.org/)
     - not sucessfully used just yet but will be for further web scraping/local testing/post/get needs.
     - attempting to check/pull current git, requires an SSH key to auth the call. (***NOTE:*** keys need to be managed better)
+
+
