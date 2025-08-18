@@ -1,28 +1,10 @@
-`run.sh` script is only built to run on linux, needs to be run in a vm container or an equivalnt `run.bat` needs to be made for windows testing. 
 
-Another solution is to use [cygwin](https://cygwin.com/) or Windows Subsystem for Linux if you're upgraded to Windows 11.
-
-Windows did not allow easy venv use for Python and this is hosted on a Linux Server anyway.
-
-
+# Nav
 - [git-readme](../README.md)
     - back home
 - [digital-ocean](./md//digital-ocean-readme.md)
     - the basis to allow hosting as an app on digital ocean
     - eases the dev load a little
-
-# Running
-- most precursor actions (dependecy install/ server startup) are built into the `run.sh` file
-- a `.venv` file is created to keep python from breaking the Operating Sytem
-    - in case of strange err, usually after depenency install, delete `.venv` folder to renew python environment.
-- additional bash defintions is contained in the `./bash/` folder
-
-the script starts a Univcorn instance (favored with FastAPI for uptime) which will reflect any static site changes once saved to disk and browser refreshed.
-
-
-most top level routes are split off into `./routes/` with `html` serving the home and most of the `./templates/` directory.
-
-
 
 # Dependecies
 
@@ -58,3 +40,42 @@ most top level routes are split off into `./routes/` with `html` serving the hom
     - attempting to check/pull current git, requires an SSH key to auth the call. (***NOTE:*** keys need to be managed better)
 
 
+# Running
+
+`run.sh` script is only built to run on linux, needs to be run in a vm container or an equivalnt `run.bat` needs to be made for windows testing. 
+
+Another solution is to use [cygwin](https://cygwin.com/) or Windows Subsystem for Linux if you're upgraded to Windows 11.
+
+Windows did not allow easy venv use for Python and this is hosted on a Linux Server anyway.
+
+
+- most precursor actions (dependecy install/ server startup) are built into the `run.sh` file
+- a `.venv` file is created to keep python from breaking the Operating Sytem
+    - in case of strange err, usually after depenency install, delete `.venv` folder to renew python environment.
+- additional bash defintions is contained in the `./bash/` folder
+
+the script starts a Univcorn instance (favored with FastAPI for uptime) which will reflect any static site changes once saved to disk and browser refreshed.
+
+
+most top level routes are split off into `./routes/` with `html` serving the home and most of the `./templates/` directory.
+
+
+
+
+
+
+# Developing
+
+    My Environment
+
+- Github/GithubDesktop
+- VS Code
+    Routines
+- upload after finishing, just note whatever you did.
+
+    General Notes
+- add any `pip` installs to the `./requiremnts.txt` folder.
+- add any System dependencies you find are needed to the `./bash/depends.txt`
+- if you do add a dependcy try to add it to this list, with the same sort of note structure.
+
+**ALL** commits should be to the `dev` branch on git hub, so they can be reviewed 
