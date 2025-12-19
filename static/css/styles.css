@@ -274,7 +274,6 @@ li:hover {
 
 .icon {
   animation: picture-shift 12s ease-in-out infinite alternate;
-
 }
 
 @keyframes picture-shift {

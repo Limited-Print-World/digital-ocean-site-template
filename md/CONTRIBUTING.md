@@ -5,6 +5,11 @@
 - [digital-ocean](./md//digital-ocean-readme.md)
     - the basis to allow hosting as an app on digital ocean
     - eases the dev load a little
+- [Task Board](https://github.com/orgs/Limited-Print-World/projects/1)
+    - post ideas
+    - check off tasks
+    - keep some notes
+    - it's the messy billboard.
 
 # Dependecies
 
